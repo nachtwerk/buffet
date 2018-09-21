@@ -21,7 +21,7 @@ initTracer looks like this:
 ```
 func initTracer() (opentracing.Tracer, io.Closer) {
 	sampler := jaeger.NewConstSampler(true)
-	transport, err := udp.NewUDPTransport("", 0)
+	transport, err := jaeger.NewUDPTransport("", 0)
 	if err != nil {
 		log.Fatal(err)
 	}
